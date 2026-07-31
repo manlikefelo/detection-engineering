@@ -78,3 +78,34 @@
   </rule>
 
 </group>
+
+<!--
+  Web-application attack rules (Project 3 red->blue loop). The UB01 Wazuh agent tails
+  the DVWA container's Apache access log (docker json), exposing the request under
+  data.log. These use type="pcre2" so they match URL-ENCODED payloads (%20, %27) as
+  well as raw ones - a lesson learned when a literal-space rule missed the encoded
+  UNION SELECT. See ../docs/tuning-log.md.
+-->
+<group name="lab,web,attack,">
+
+  <!-- 100014 - Web SQL injection (T1190) -->
+  <rule id="100014" level="12">
+    <decoded_as>json</decoded_as>
+    <field name="log" type="pcre2">(?i)union(\s|%20|\+)+select|information_schema|\bor\b(\s|%20|\+)+1=1|sqlmap</field>
+    <description>Web attack: SQL injection pattern in HTTP request [T1190]</description>
+    <mitre><id>T1190</id></mitre>
+    <options>no_full_log</options>
+    <group>web_sqli,</group>
+  </rule>
+
+  <!-- 100015 - Web XSS (T1190) -->
+  <rule id="100015" level="10">
+    <decoded_as>json</decoded_as>
+    <field name="log" type="pcre2">(?i)&lt;script|javascript:|onerror=|&lt;iframe|alert\(</field>
+    <description>Web attack: cross-site scripting (XSS) pattern in HTTP request [T1190]</description>
+    <mitre><id>T1190</id></mitre>
+    <options>no_full_log</options>
+    <group>web_xss,</group>
+  </rule>
+
+</group>

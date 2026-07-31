@@ -86,6 +86,34 @@ engineering.
 
 ---
 
+## FP-3 — a web SQLi rule that silently matched nothing (encoding, not a false *positive* — a false *negative*)
+
+**What happened.** Building the web-attack detections (rules 100014/100015) for the
+DVWA victim, the **XSS rule fired but the SQLi rule didn't** — even on a confirmed
+`UNION SELECT` attack. Zero alerts, no error. A silent false *negative*, which is more
+dangerous than a false positive because nothing tells you it's broken.
+
+**Why.** Real attack traffic is **URL-encoded**. The Apache access log recorded the
+request as `id=1%27%20UNION%20SELECT%20...` — `%27` for the quote, `%20` for spaces. My
+first rule matched a literal `UNION SELECT` with a real space, which **never appears in
+the log**. The detection logic was "correct" against the textbook payload and useless
+against the wire format.
+
+**How I fixed it.** Switched the field to a **PCRE2** pattern
+(`<field name="log" type="pcre2">`) that accepts `%20`, `+`, or a real space between the
+keywords: `(?i)union(\s|%20|\+)+select`. It matched immediately.
+
+**Two config errors along the way** (worth recording, because "the SIEM is only as good
+as its config" is the real lesson): (1) appending rules left an **unterminated XML
+comment**, and (2) my first regex used **OS_Regex** (Wazuh's default engine), which
+rejects PCRE-style capture groups `()` and `+` — both took `wazuh-analysisd` offline
+until fixed. Always restart and confirm the rule engine actually loaded; a rule you
+can't see load is a rule that isn't running.
+
+**Reasoning / takeaway.** Detections must be tested against **captured real traffic**,
+not hand-built ideal payloads — the same reason a `wazuh-logtest` dry-run with tidy JSON
+can pass while the live rule fails. Match the wire format.
+
 ## What I'd do next (production hardening)
 
 - **Port the Sigma filters into the deployed Wazuh rules.** The live lab rules are

@@ -21,6 +21,7 @@ detections/
   02-asrep-roasting/           Sigma + doc  → Wazuh rule 100011  (T1558.004)
   03-dcsync/                   Sigma + doc  → Wazuh rule 100012  (T1003.006)
   04-bloodhound-enumeration/   Sigma + doc  → Wazuh rule 100013  (T1087.002)
+  05-web-attacks/              Sigma + doc  → Wazuh rules 100014/100015 (T1190)
 wazuh/local_rules.xml          the deployed rules (what actually runs in my SIEM)
 docs/coverage-matrix.md        ATT&CK grid + honest gaps
 docs/tuning-log.md             2 real false positives I hit and suppressed  ⭐
@@ -42,9 +43,11 @@ to Splunk, Elastic, or Sentinel. The Wazuh XML is the deployment detail.
 | 02 | AS-REP Roasting (T1558.004) | 4768 | `preAuthType 0` | [yml](detections/02-asrep-roasting/asrep_roasting_no_preauth.yml) | 100011 |
 | 03 | DCSync (T1003.006) | 4662 | replication right by a non-DC | [yml](detections/03-dcsync/dcsync_replication_rights.yml) | 100012 |
 | 04 | Enumeration burst (T1087.002) | 4661/4662 | rate: >15 reads / 60s | [yml](detections/04-bloodhound-enumeration/bloodhound_directory_read_burst.yml) | 100013 |
+| 05 | Web SQLi / XSS (T1190) | Apache access log | injection patterns in the URI (URL-encoding aware) | [yml](detections/05-web-attacks/web_sqli_xss.yml) | 100014/100015 |
 
-**Quantified result:** 4 detections covering 5 ATT&CK techniques across 2 tactics,
-all verified firing, with 2 documented false-positive suppressions.
+**Quantified result:** 6 detections covering 6 ATT&CK techniques across 3 tactics,
+all verified firing, with 3 documented tuning cases (2 false positives + 1 false
+negative from URL-encoding).
 
 ## The part hiring managers ask about
 
