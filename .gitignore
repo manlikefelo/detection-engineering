@@ -3,7 +3,8 @@
 *.env
 !.env.example
 *.local
-content/            # human-voiced social drafts, kept local only
+# human-voiced social drafts, kept local only
+content/
 
 # Credentials / keys
 *.pem
