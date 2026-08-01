@@ -1,6 +1,6 @@
 # Detection Engineering — Sigma + Wazuh 🔵
 
-The blue-team half of a purple-team pair. In my [ad-attack-chain](../ad-attack-chain)
+The blue-team half of a purple-team pair. In my [ad-attack-chain](https://github.com/manlikefelo/ad-attack-chain)
 repo I compromised an Active Directory domain; **here I detect every one of those
 attacks** — written as portable **Sigma** rules (the source of truth) and deployed as
 **Wazuh** rules in my single-node SIEM, each **verified firing end-to-end** against
@@ -65,7 +65,7 @@ negative from URL-encoding).
 docker cp wazuh/local_rules.xml wazuh-lab-wazuh.manager-1:/var/ossec/etc/rules/local_rules.xml
 docker exec wazuh-lab-wazuh.manager-1 /var/ossec/bin/wazuh-control restart
 ```
-The lab itself (DC + Sysmon + Wazuh) is built in [security-homelab](../security-homelab).
+The lab itself (DC + Sysmon + Wazuh) is built in [security-homelab](https://github.com/manlikefelo/security-homelab).
 Note the **auditing prerequisite** for the 4662 rules in [`validation.md`](validation.md).
 
 ## Skills demonstrated

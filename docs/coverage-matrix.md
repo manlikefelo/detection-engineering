@@ -22,10 +22,10 @@ Columns are ATT&CK **tactics**; each cell is a technique with its detection stat
   Discovery, Initial Access), via **6 custom Wazuh rules** (`100010`–`100015`), each
   backed by a portable Sigma rule.
 - The web rules (`100014`/`100015`, T1190) close the red→blue loop for the
-  [web pentest](../../webapp-pentest-juiceshop) the same way `100010`–`100013` do for
+  [web pentest](https://github.com/manlikefelo/webapp-pentest-juiceshop) the same way `100010`–`100013` do for
   the AD attacks.
 - Every detection is paired 1:1 with a **real attack** in the
-  [ad-attack-chain](../../ad-attack-chain) repo and **verified firing** — see
+  [ad-attack-chain](https://github.com/manlikefelo/ad-attack-chain) repo and **verified firing** — see
   [`../validation.md`](../validation.md).
 
 ## Honest gaps (what I do *not* claim to cover)

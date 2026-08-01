@@ -1,6 +1,6 @@
 # Detection 01 — Kerberoasting (T1558.003)
 
-Detects the attack in [ad-attack-chain → Phase 01](../../../ad-attack-chain/engagement/01-kerberoasting/).
+Detects the attack in [ad-attack-chain → Phase 01](https://github.com/manlikefelo/ad-attack-chain/tree/main/engagement/01-kerberoasting).
 
 | | |
 |---|---|
@@ -25,8 +25,8 @@ Sigma version additionally filters out machine accounts (names ending in `$`) an
 Filtering `rule.id:100010` in Wazuh Discover returns the Kerberoast, with
 `data.win.eventdata.serviceName: svc_sql`, `ticketEncryptionType: 0x17`, and the
 attacker's source IP (`10.10.10.40`, KALI01). Screenshots:
-[attack](../../../ad-attack-chain/engagement/01-kerberoasting/evidence/02-getuserspns-svc_sql.png)
-→ [alert](../../../ad-attack-chain/engagement/01-kerberoasting/evidence/05-wazuh-kerberoast-alert.png).
+[attack](https://github.com/manlikefelo/ad-attack-chain/blob/main/engagement/01-kerberoasting/evidence/02-getuserspns-svc_sql.png)
+→ [alert](https://github.com/manlikefelo/ad-attack-chain/blob/main/engagement/01-kerberoasting/evidence/05-wazuh-kerberoast-alert.png).
 
 ## Known false positives & tuning
 

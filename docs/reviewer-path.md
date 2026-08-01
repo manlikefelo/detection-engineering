@@ -12,7 +12,7 @@ Open **[`detections/03-dcsync/`](../detections/03-dcsync/)** — the sharpest ex
 - the **[Sigma rule](../detections/03-dcsync/dcsync_replication_rights.yml)** (portable source of truth),
 - the **[doc](../detections/03-dcsync/README.md)** explaining the 4662 + replication-GUID logic and the auditing prerequisite,
 - the deployed **Wazuh rule 100012**,
-- and the **[verified alert JSON](../../ad-attack-chain/engagement/03-dcsync/evidence/wazuh_alert_100012.json)** proving it fired on the real attack.
+- and the **[verified alert JSON](https://github.com/manlikefelo/ad-attack-chain/blob/main/engagement/03-dcsync/evidence/wazuh_alert_100012.json)** proving it fired on the real attack.
 
 That's the full loop: attack → log → rule → alert.
 
@@ -27,5 +27,5 @@ production, and it's the thing I'd most want to talk through in an interview.
 **What this repo proves:** I can author portable Sigma detections, deploy them in a
 real SIEM, validate them against live attacks, tune out false positives with clear
 reasoning, and honestly assess where my coverage ends. Paired with
-[ad-attack-chain](../../ad-attack-chain), it's a complete purple-team demonstration:
+[ad-attack-chain](https://github.com/manlikefelo/ad-attack-chain), it's a complete purple-team demonstration:
 I ran the attack, and I catch it.

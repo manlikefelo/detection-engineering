@@ -1,6 +1,6 @@
 # Detection 05 — Web attacks: SQL injection & XSS (T1190)
 
-Detects the attacks in [webapp-pentest-juiceshop](../../../webapp-pentest-juiceshop/).
+Detects the attacks in [webapp-pentest-juiceshop](https://github.com/manlikefelo/webapp-pentest-juiceshop).
 
 | | |
 |---|---|
@@ -32,5 +32,5 @@ and OS_Regex rejecting PCRE-style groups) — is written up in
 ## Verified firing
 
 Both rules fired end-to-end on replayed attacks — captured alert JSON in the pentest
-repo: [SQLi alert](../../../webapp-pentest-juiceshop/evidence/blue-detection/wazuh_alert_100014_sqli.json),
-[XSS alert](../../../webapp-pentest-juiceshop/evidence/blue-detection/wazuh_alert_100015_xss.json).
+repo: [SQLi alert](https://github.com/manlikefelo/webapp-pentest-juiceshop/blob/main/evidence/blue-detection/wazuh_alert_100014_sqli.json),
+[XSS alert](https://github.com/manlikefelo/webapp-pentest-juiceshop/blob/main/evidence/blue-detection/wazuh_alert_100015_xss.json).

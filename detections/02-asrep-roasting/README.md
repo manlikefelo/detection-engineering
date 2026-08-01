@@ -1,6 +1,6 @@
 # Detection 02 — AS-REP Roasting (T1558.004)
 
-Detects the attack in [ad-attack-chain → Phase 02](../../../ad-attack-chain/engagement/02-asrep-roasting/).
+Detects the attack in [ad-attack-chain → Phase 02](https://github.com/manlikefelo/ad-attack-chain/tree/main/engagement/02-asrep-roasting).
 
 | | |
 |---|---|
@@ -24,7 +24,7 @@ which is what makes it a pre-access technique worth alerting on loudly.
 
 `rule.id:100011` returns the roast with `preAuthType: 0`, `ticketEncryptionType: 0x17`,
 `targetUserName: b.otieno`, source `10.10.10.40`. Real captured alert JSON:
-[`wazuh_alert_100011.json`](../../../ad-attack-chain/engagement/02-asrep-roasting/evidence/wazuh_alert_100011.json).
+[`wazuh_alert_100011.json`](https://github.com/manlikefelo/ad-attack-chain/blob/main/engagement/02-asrep-roasting/evidence/wazuh_alert_100011.json).
 
 ## Known false positives & tuning
 

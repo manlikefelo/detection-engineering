@@ -3,17 +3,17 @@
 Detection rules only count if they fire on the real thing. Each rule here was
 validated by **replaying the matching attack from KALI01** against DC01 (agent id
 001), letting the Wazuh manager evaluate it, and confirming the alert in Discover.
-The captured alert documents live in the [ad-attack-chain](../ad-attack-chain)
+The captured alert documents live in the [ad-attack-chain](https://github.com/manlikefelo/ad-attack-chain)
 repo's per-phase `evidence/` folders (linked below).
 
 ## Results
 
 | Rule | Technique | Attack replayed | Verified alert | Evidence |
 |------|-----------|-----------------|----------------|----------|
-| **100010** | T1558.003 Kerberoasting | `impacket-GetUserSPNs` → RC4 TGS for `svc_sql` | ✅ 4769 / `0x17` / `svc_sql`, src 10.10.10.40 | [alert shot](../ad-attack-chain/engagement/01-kerberoasting/evidence/05-wazuh-kerberoast-alert.png) |
-| **100011** | T1558.004 AS-REP Roasting | `impacket-GetNPUsers -no-pass` for `b.otieno` | ✅ 4768 / `preAuthType 0` / RC4 (fired 2×) | [alert JSON](../ad-attack-chain/engagement/02-asrep-roasting/evidence/wazuh_alert_100011.json) |
-| **100012** | T1003.006 DCSync | `impacket-secretsdump -just-dc` as `b.otieno` | ✅ 4662 / replication GUID `1131f6aa…` / subject `b.otieno` (fired 2×) | [alert JSON](../ad-attack-chain/engagement/03-dcsync/evidence/wazuh_alert_100012.json) |
-| **100013** | T1087.002 Discovery | `bloodhound-python -c All` | ✅ 4662 read burst, `frequency 15` tripped (fired 2×) | [alert JSON](../ad-attack-chain/engagement/04-bloodhound/evidence/wazuh_alert_100013.json) |
+| **100010** | T1558.003 Kerberoasting | `impacket-GetUserSPNs` → RC4 TGS for `svc_sql` | ✅ 4769 / `0x17` / `svc_sql`, src 10.10.10.40 | [alert shot](https://github.com/manlikefelo/ad-attack-chain/blob/main/engagement/01-kerberoasting/evidence/05-wazuh-kerberoast-alert.png) |
+| **100011** | T1558.004 AS-REP Roasting | `impacket-GetNPUsers -no-pass` for `b.otieno` | ✅ 4768 / `preAuthType 0` / RC4 (fired 2×) | [alert JSON](https://github.com/manlikefelo/ad-attack-chain/blob/main/engagement/02-asrep-roasting/evidence/wazuh_alert_100011.json) |
+| **100012** | T1003.006 DCSync | `impacket-secretsdump -just-dc` as `b.otieno` | ✅ 4662 / replication GUID `1131f6aa…` / subject `b.otieno` (fired 2×) | [alert JSON](https://github.com/manlikefelo/ad-attack-chain/blob/main/engagement/03-dcsync/evidence/wazuh_alert_100012.json) |
+| **100013** | T1087.002 Discovery | `bloodhound-python -c All` | ✅ 4662 read burst, `frequency 15` tripped (fired 2×) | [alert JSON](https://github.com/manlikefelo/ad-attack-chain/blob/main/engagement/04-bloodhound/evidence/wazuh_alert_100013.json) |
 
 ## Metrics
 

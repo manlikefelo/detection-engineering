@@ -1,6 +1,6 @@
 # Detection 03 — DCSync (T1003.006)
 
-Detects the attack in [ad-attack-chain → Phase 03](../../../ad-attack-chain/engagement/03-dcsync/).
+Detects the attack in [ad-attack-chain → Phase 03](https://github.com/manlikefelo/ad-attack-chain/tree/main/engagement/03-dcsync).
 
 | | |
 |---|---|
@@ -35,7 +35,7 @@ true DCSync signature.
 `rule.id:100012` returns the DCSync with the replication GUID in `properties` and
 `subjectUserName: b.otieno` (a non-DC helpdesk account) from source `10.10.10.40`.
 Captured alert JSON:
-[`wazuh_alert_100012.json`](../../../ad-attack-chain/engagement/03-dcsync/evidence/wazuh_alert_100012.json).
+[`wazuh_alert_100012.json`](https://github.com/manlikefelo/ad-attack-chain/blob/main/engagement/03-dcsync/evidence/wazuh_alert_100012.json).
 
 ## Known false positives & tuning
 

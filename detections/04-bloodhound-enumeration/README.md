@@ -1,6 +1,6 @@
 # Detection 04 — Directory Enumeration Burst / BloodHound (T1087.002)
 
-Detects the attack in [ad-attack-chain → Phase 04](../../../ad-attack-chain/engagement/04-bloodhound/).
+Detects the attack in [ad-attack-chain → Phase 04](https://github.com/manlikefelo/ad-attack-chain/tree/main/engagement/04-bloodhound).
 
 | | |
 |---|---|
@@ -27,7 +27,7 @@ sharp single-event rules (01–03) and the one most in need of environment tunin
 
 `rule.id:100013` returns the enumeration burst — multiple 4662s from `a.mokaya` /
 `b.otieno` inside the window, source `10.10.10.40`. Captured alert JSON:
-[`wazuh_alert_100013.json`](../../../ad-attack-chain/engagement/04-bloodhound/evidence/wazuh_alert_100013.json).
+[`wazuh_alert_100013.json`](https://github.com/manlikefelo/ad-attack-chain/blob/main/engagement/04-bloodhound/evidence/wazuh_alert_100013.json).
 
 ## Known false positives & tuning
 
