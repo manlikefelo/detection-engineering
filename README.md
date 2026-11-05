@@ -1,14 +1,14 @@
-# Detection Engineering — Sigma + Wazuh 🔵
+# Detection Engineering: Sigma + Wazuh
 
 The blue-team half of a purple-team pair. In my [ad-attack-chain](https://github.com/manlikefelo/ad-attack-chain)
 repo I compromised an Active Directory domain; **here I detect every one of those
-attacks** — written as portable **Sigma** rules (the source of truth) and deployed as
+attacks**, written as portable **Sigma** rules (the source of truth) and deployed as
 **Wazuh** rules in my single-node SIEM, each **verified firing end-to-end** against
 the real attack.
 
 > **The purple-team story:** I attacked in repo A, and here's how I catch myself in
-> repo B. Detecting the exact attacks you launched — on the same telemetry, mapped to
-> the same ATT&CK IDs — is the demonstration that turns "I ran some tools" into "I
+> repo B. Detecting the exact attacks you launched (on the same telemetry, mapped to
+> the same ATT&CK IDs) is the demonstration that turns "I ran some tools" into "I
 > understand both sides of the event."
 
 ---
@@ -24,14 +24,14 @@ detections/
   05-web-attacks/              Sigma + doc  → Wazuh rules 100014/100015 (T1190)
 wazuh/local_rules.xml          the deployed rules (what actually runs in my SIEM)
 docs/coverage-matrix.md        ATT&CK grid + honest gaps
-docs/tuning-log.md             2 real false positives I hit and suppressed  ⭐
+docs/tuning-log.md             2 real false positives I hit and suppressed
 validation.md                  proof each rule fired on a real attack + metrics
 ```
 
 ## Sigma as the source of truth
 
-Each detection is authored as a **Sigma** rule — the portable, vendor-neutral
-detection format — and then expressed as the **Wazuh** rule that runs in my lab. Sigma
+Each detection is authored as a **Sigma** rule (the portable, vendor-neutral
+detection format) and then expressed as the **Wazuh** rule that runs in my lab. Sigma
 is the thing worth reviewing: it's tool-agnostic, so the same logic could be converted
 to Splunk, Elastic, or Sentinel. The Wazuh XML is the deployment detail.
 
@@ -51,11 +51,11 @@ negative from URL-encoding).
 
 ## The part hiring managers ask about
 
-- **[`docs/tuning-log.md`](docs/tuning-log.md)** — two *real* false positives I hit
+- **[`docs/tuning-log.md`](docs/tuning-log.md)**: two *real* false positives I hit
   (the DCSync rule catching the DC's own replication; the enumeration rule catching
   legitimate bulk reads), why each happened, and how I tuned it. This is where the
   actual craft of detection engineering lives.
-- **[`docs/coverage-matrix.md`](docs/coverage-matrix.md)** — the ATT&CK grid *and* the
+- **[`docs/coverage-matrix.md`](docs/coverage-matrix.md)**: the ATT&CK grid *and* the
   honest gaps I don't claim to cover.
 
 ## Deploy
@@ -75,4 +75,4 @@ Sigma rule authoring · Wazuh custom rules/decoders · Windows event analysis (4
 purple-team validation (attack → log → rule → alert) · honest coverage assessment.
 
 ## Read next
-- **[`docs/reviewer-path.md`](docs/reviewer-path.md)** — a 3-minute guided tour.
+- **[`docs/reviewer-path.md`](docs/reviewer-path.md)**: a 3-minute guided tour.
