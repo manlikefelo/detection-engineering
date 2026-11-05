@@ -1,10 +1,10 @@
 # Detection 04: Directory Enumeration Burst / BloodHound (T1087.002)
 
-Detects the attack in [ad-attack-chain → Phase 04](https://github.com/manlikefelo/ad-attack-chain/tree/main/engagement/04-bloodhound).
+Detects the attack in [ad-attack-chain: Phase 04](https://github.com/manlikefelo/ad-attack-chain/tree/main/engagement/04-bloodhound).
 
 | | |
 |---|---|
-| **ATT&CK** | Discovery → Account Discovery: Domain (**T1087.002**), Permission Groups Discovery: Domain (**T1069.002**) |
+| **ATT&CK** | Discovery / Account Discovery: Domain (**T1087.002**), Permission Groups Discovery: Domain (**T1069.002**) |
 | **Log source** | Windows Security (DC), Wazuh `windows_eventchannel` decoder |
 | **Key events** | **4661 / 4662**, object-access reads, in volume |
 | **Signal type** | **Rate** (frequency + timeframe), not a single event |

@@ -1,10 +1,10 @@
 # Detection 02: AS-REP Roasting (T1558.004)
 
-Detects the attack in [ad-attack-chain → Phase 02](https://github.com/manlikefelo/ad-attack-chain/tree/main/engagement/02-asrep-roasting).
+Detects the attack in [ad-attack-chain: Phase 02](https://github.com/manlikefelo/ad-attack-chain/tree/main/engagement/02-asrep-roasting).
 
 | | |
 |---|---|
-| **ATT&CK** | Credential Access → AS-REP Roasting (**T1558.004**) |
+| **ATT&CK** | Credential Access / AS-REP Roasting (**T1558.004**) |
 | **Log source** | Windows Security (DC), Wazuh `windows_eventchannel` decoder |
 | **Key event** | **4768**: Kerberos authentication ticket (TGT) requested |
 | **Key fields** | `preAuthType = 0` (pre-auth disabled) · `ticketEncryptionType = 0x17` (RC4) |

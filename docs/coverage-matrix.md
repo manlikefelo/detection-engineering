@@ -2,7 +2,7 @@
 
 At-a-glance breadth: which MITRE ATT&CK techniques this repo's detections cover, laid
 out on the tactics they belong to. This is the first thing to look at. It shows the
-shape of the coverage and, just as importantly, the **honest gaps**.
+shape of the coverage and, just as importantly, the **known gaps**.
 
 ## The grid
 
@@ -28,7 +28,7 @@ Entries with a rule number are built **and verified firing** end-to-end. Entries
   [ad-attack-chain](https://github.com/manlikefelo/ad-attack-chain) repo and **verified firing**, see
   [`../validation.md`](../validation.md).
 
-## Honest gaps (what I do *not* claim to cover)
+## Known gaps
 
 - **T1110.002 Password Cracking**: happens offline on the attacker's box; there is no
   host telemetry to detect, by design. Listed for completeness, not coverage.

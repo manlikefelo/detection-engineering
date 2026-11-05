@@ -23,7 +23,7 @@ repo's per-phase `evidence/` folders (linked below).
 - **True-positive rate on replay:** 4/4 attacks alerted.
 - **False positives found & tuned:** 2 documented in [`docs/tuning-log.md`](docs/tuning-log.md).
 
-## Notes on validating detections honestly
+## Notes on validating detections
 
 - **`wazuh-logtest` dry-runs don't prove a Windows rule.** Hand-built JSON fed to
   logtest decodes as generic `json` and never enters the `windows` group, so it won't

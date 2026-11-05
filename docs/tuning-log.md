@@ -1,12 +1,12 @@
 # Tuning log: real false positives I hit and suppressed
 
-Detection rules are never "done" the moment they fire on the attack. The harder,
-more honest work is what happens next: the rule also fires on *benign* activity, and
+Detection rules are never "done" the moment they fire on the attack. The harder
+work is what happens next: the rule also fires on *benign* activity, and
 you have to decide whether to suppress, refine, or accept it. This log records the
 false positives I actually ran into building this lab, why each happened, and exactly
 how I tuned it. The reasoning matters more than the YAML.
 
-> Two of these (FP-1, FP-2) are the ones I'd talk through in an interview, because
+> FP-1 and FP-2 matter most, because
 > they show the two classic tuning trade-offs: a **rate rule that's too broad** and a
 > **signature rule that catches legitimate system behaviour**.
 
@@ -79,9 +79,8 @@ set (I flagged this in the rule's own description).
 
 **Reasoning / trade-off.** I chose to **keep a noisier rule at low severity** rather
 than suppress the behaviour entirely, because losing enumeration visibility is worse
-than triaging the occasional benign burst. This is the honest opposite of FP-1: there
-I could cleanly exclude the FP; here I can only *manage* it. Saying that plainly.
-"This detection is a lead, not a verdict", is itself part of good detection
+than triaging the occasional benign burst. This is the opposite of FP-1: there
+I could cleanly exclude the FP; here I can only *manage* it. Saying so plainly (this detection is a lead, not a verdict) is itself part of good detection
 engineering.
 
 ---

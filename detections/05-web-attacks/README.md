@@ -4,7 +4,7 @@ Detects the attacks in [webapp-pentest-juiceshop](https://github.com/manlikefelo
 
 | | |
 |---|---|
-| **ATT&CK** | Initial Access → Exploit Public-Facing Application (**T1190**) |
+| **ATT&CK** | Initial Access / Exploit Public-Facing Application (**T1190**) |
 | **Log source** | DVWA container Apache access log → docker json → Wazuh agent (UB01) |
 | **Signal** | SQLi / XSS patterns in the HTTP request URI |
 | **Sigma** | [`web_sqli_xss.yml`](web_sqli_xss.yml) |

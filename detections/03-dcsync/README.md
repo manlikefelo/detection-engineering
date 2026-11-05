@@ -1,10 +1,10 @@
 # Detection 03: DCSync (T1003.006)
 
-Detects the attack in [ad-attack-chain → Phase 03](https://github.com/manlikefelo/ad-attack-chain/tree/main/engagement/03-dcsync).
+Detects the attack in [ad-attack-chain: Phase 03](https://github.com/manlikefelo/ad-attack-chain/tree/main/engagement/03-dcsync).
 
 | | |
 |---|---|
-| **ATT&CK** | Credential Access → OS Credential Dumping: DCSync (**T1003.006**) |
+| **ATT&CK** | Credential Access / OS Credential Dumping: DCSync (**T1003.006**) |
 | **Log source** | Windows Security (DC), Wazuh `windows_eventchannel` decoder |
 | **Key event** | **4662**: an operation was performed on an AD object |
 | **Key fields** | `properties` contains a replication extended-right GUID · `subjectUserName` |

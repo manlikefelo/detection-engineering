@@ -1,10 +1,10 @@
 # Detection 01: Kerberoasting (T1558.003)
 
-Detects the attack in [ad-attack-chain → Phase 01](https://github.com/manlikefelo/ad-attack-chain/tree/main/engagement/01-kerberoasting).
+Detects the attack in [ad-attack-chain: Phase 01](https://github.com/manlikefelo/ad-attack-chain/tree/main/engagement/01-kerberoasting).
 
 | | |
 |---|---|
-| **ATT&CK** | Credential Access → Kerberoasting (**T1558.003**) |
+| **ATT&CK** | Credential Access / Kerberoasting (**T1558.003**) |
 | **Log source** | Windows Security (DC), Wazuh `windows_eventchannel` decoder |
 | **Key event** | **4769**: Kerberos service ticket (TGS) requested |
 | **Key fields** | `ticketEncryptionType = 0x17` (RC4) · `serviceName` (the SPN account) |

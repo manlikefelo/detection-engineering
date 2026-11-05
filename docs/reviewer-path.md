@@ -1,4 +1,4 @@
-# Reviewer path: a 3-minute tour
+# Repo guide
 
 The fastest route through this repo, in the order that best shows detection thinking.
 
@@ -20,12 +20,12 @@ That's the full loop: attack → log → rule → alert.
 Open **[`tuning-log.md`](tuning-log.md)**. Two *real* false positives, why each fired,
 and how I suppressed or managed it, including the trade-off reasoning. This is the
 part that separates someone who *writes* a rule from someone who *runs* detections in
-production, and it's the thing I'd most want to talk through in an interview.
+production, and it taught me the most.
 
 ---
 
-**What this repo proves:** I can author portable Sigma detections, deploy them in a
+**What this repo shows:** I can author portable Sigma detections, deploy them in a
 real SIEM, validate them against live attacks, tune out false positives with clear
-reasoning, and honestly assess where my coverage ends. Paired with
+reasoning, and assess where my coverage ends. Paired with
 [ad-attack-chain](https://github.com/manlikefelo/ad-attack-chain), it's a complete purple-team demonstration:
 I ran the attack, and I catch it.

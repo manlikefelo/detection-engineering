@@ -6,10 +6,8 @@ attacks**, written as portable **Sigma** rules (the source of truth) and deploye
 **Wazuh** rules in my single-node SIEM, each **verified firing end-to-end** against
 the real attack.
 
-> **The purple-team story:** I attacked in repo A, and here's how I catch myself in
-> repo B. Detecting the exact attacks you launched (on the same telemetry, mapped to
-> the same ATT&CK IDs) is the demonstration that turns "I ran some tools" into "I
-> understand both sides of the event."
+> **How it connects:** I ran the attacks in one repo and catch them in this one, on the
+> same telemetry and mapped to the same ATT&CK IDs.
 
 ---
 
@@ -49,14 +47,14 @@ to Splunk, Elastic, or Sentinel. The Wazuh XML is the deployment detail.
 all verified firing, with 3 documented tuning cases (2 false positives + 1 false
 negative from URL-encoding).
 
-## The part hiring managers ask about
+## Tuning and coverage
 
 - **[`docs/tuning-log.md`](docs/tuning-log.md)**: two *real* false positives I hit
   (the DCSync rule catching the DC's own replication; the enumeration rule catching
   legitimate bulk reads), why each happened, and how I tuned it. This is where the
   actual craft of detection engineering lives.
 - **[`docs/coverage-matrix.md`](docs/coverage-matrix.md)**: the ATT&CK grid *and* the
-  honest gaps I don't claim to cover.
+  gaps I don't claim to cover.
 
 ## Deploy
 
@@ -72,7 +70,7 @@ Note the **auditing prerequisite** for the 4662 rules in [`validation.md`](valid
 
 Sigma rule authoring · Wazuh custom rules/decoders · Windows event analysis (4768/
 4769/4661/4662) · ATT&CK mapping · **detection tuning & false-positive analysis** ·
-purple-team validation (attack → log → rule → alert) · honest coverage assessment.
+purple-team validation (attack → log → rule → alert) · coverage assessment.
 
 ## Read next
-- **[`docs/reviewer-path.md`](docs/reviewer-path.md)**: a 3-minute guided tour.
+- **[`docs/reviewer-path.md`](docs/reviewer-path.md)**: a short guide to this repo.
